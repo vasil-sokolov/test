@@ -1,0 +1,16 @@
+{
+  "name": "vasil",
+  "description": "Test bower",
+  "main": [
+    "js/motion.js",
+    "sass/motion.scss"
+  ],
+  "authors": [
+    "Vasil S"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "node_modules",
+    "bower_components"
+  ]
+}
