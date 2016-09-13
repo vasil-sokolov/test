@@ -1,0 +1,12 @@
+{
+	"name": "afterlogic/aurora-core",
+    	"version":"0.1.0",
+    	"type": "aurora-platform",
+    	"dist":{
+               "url":"https://github.com/vasil-sokolov/test/archive/master.zip",
+                "type":"zip"
+        },
+	"require":{
+		"php":">=5.4.0"
+	}
+}
