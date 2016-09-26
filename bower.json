@@ -12,5 +12,8 @@
   "ignore": [
     "node_modules",
     "bower_components"
-  ]
+  ],
+  "dependencies": {
+    "AdminAuth": "https://github.com/afterlogic/aurora-module-admin-auth.git"
+  },
 }
