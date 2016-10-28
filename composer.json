@@ -1,0 +1,25 @@
+{
+	"name": "afterlogic/aurora-core",
+	"version": "1.0",
+	"source": {
+		"type": "git",
+		"url": "https://github.com/vasil-sokolov/test",
+		"reference": "master"
+	},
+	"dist": {
+		"type": "zip",
+		"url": "https://github.com/vasil-sokolov/test/archive/master.zip",
+		"reference": "master"
+	},
+	"autoload": {
+		"psr-4" : {
+			"AuroraPlatform\\": "system/"
+		}
+	},
+	"type": "aurora-core",
+	"scripts": {
+		"post-update-cmd": [
+			"AuroraPlatform\\Installer::postInstall"
+		]
+	}
+}
