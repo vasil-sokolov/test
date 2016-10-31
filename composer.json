@@ -17,9 +17,8 @@
 		}
 	},
 	"type": "aurora-core",
-	"scripts": {
-		"post-update-cmd": [
-			"AuroraPlatform\\Installer::postInstall"
-		]
+	"require": {
+		"afterlogic/aurora-core": "0.2.0"
 	}
+	
 }
