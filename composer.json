@@ -18,7 +18,7 @@
 	},
 	"type": "aurora-core",
 	"require": {
-		"afterlogic/aurora-core": "0.2.0"
+		"afterlogic/aurora-core": "0.1.0"
 	}
 	
 }
