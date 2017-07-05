@@ -1,5 +1,5 @@
 {
-	"name": "afterlogic/aurora-module",
+	"name": "afterlogic/aurora-framework",
 	"autoload": {
 		"psr-4" : {
 			"Aurora\\": "system/"
