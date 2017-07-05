@@ -1,39 +1,72 @@
 <?php
-namespace AuroraPlatform;
 
-use Composer\Script\Event;
-use Composer\Installer\PackageEvent;
+namespace Aurora;
+
+// use Composer\Script\Event;
+// use Composer\Installer\PackageEvent;
 
 class Installer
 {
-    public static function postInstall(Event $event)
+    public static function postUpdate(Event $event)
     {
-		$sourcePath = "web/";
-		$destPath = "";
-		
-		self::recurse_copy($sourcePath."build/", $destPath."build/");
-		self::recurse_copy($sourcePath."gulp-tasks/", $destPath."gulp-tasks/");
-		
-		copy($sourcePath."package.json", $destPath."package.json");
-		copy($sourcePath."gulpfile.js", $destPath."gulpfile.js");
-		copy($sourcePath."index.php", $destPath."index.php");
-		copy($sourcePath."dav.php", $destPath."dav.php");
-		copy($sourcePath."common.php.php", $destPath."common.php.php");
+		echo "22";
+		$sPreConfig = file_get_contents('../build/wml-pre-config.json');
+
+		$oPreConfig = json_decode($sPreConfig, true);
+
+		if ($oPreConfig)
+		{
+			include_once './autoload.php';
+			
+			\Aurora\System\Api::Init();
+			
+			if ($oPreConfig['modules'])
+			{
+				foreach ($oPreConfig['modules'] as $sModuleName => $oModuleConfig)
+				{
+					foreach ($oModuleConfig as $sConfigName => $mConfigValue)
+					{
+						$oModuleManager = \Aurora\System\Api::GetModuleManager();
+
+						$mValue = $oModuleManager->getModuleConfigValue($sModuleName, $sConfigName, null);
+						if ($mValue !== null)
+						{
+							$oModuleManager->setModuleConfigValue($sModuleName, $sConfigName, $mConfigValue);
+							$oModuleManager->saveModuleConfigValue($sModuleName);
+						}
+						else
+						{
+							echo 'Invalid setting \'' . $sConfigName . '\' in module \''.$sModuleName.'\'';
+						}
+					}
+				}
+			}
+		}
+		else
+		{
+			echo "Invalid config file";
+		}
+
+        // $composer = $event->getComposer();
+        // do stuff
     }
-	
-	public static function recurse_copy($src,$dst) { 
-		$dir = opendir($src); 
-		@mkdir($dst); 
-		while(false !== ( $file = readdir($dir)) ) { 
-			if (( $file != '.' ) && ( $file != '..' )) { 
-				if ( is_dir($src . '/' . $file) ) { 
-					self::recurse_copy($src . '/' . $file,$dst . '/' . $file); 
-				} 
-				else { 
-					copy($src . '/' . $file,$dst . '/' . $file); 
-				} 
-			} 
-		} 
-		closedir($dir); 
-	} 
+
+    // public static function postAutoloadDump(Event $event)
+    // {
+        // $vendorDir = $event->getComposer()->getConfig()->get('vendor-dir');
+        // require $vendorDir . '/autoload.php';
+
+        // some_function_from_an_autoloaded_file();
+    // }
+
+    // public static function postPackageInstall(PackageEvent $event)
+    // {
+        // $installedPackage = $event->getOperation()->getPackage();
+        // do stuff
+    // }
+
+    // public static function warmCache(Event $event)
+    // {
+        // make cache toasty
+    // }
 }
