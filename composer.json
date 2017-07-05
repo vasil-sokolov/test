@@ -1,9 +1,7 @@
 {
 	"name": "afterlogic/aurora-framework",
 	"autoload": {
-		"psr-4" : {
-			"Aurora\\": "/"
-		}
+		"files": ["system/Installer.php"]
 	},
 	"type": "aurora-framework"
 }
