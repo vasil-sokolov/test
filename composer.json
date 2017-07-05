@@ -5,9 +5,5 @@
 			"Aurora\\": "system/"
 		}
 	},
-	"type": "aurora-core",
-	"require": {
-		"afterlogic/aurora-core": "0.1.0"
-	}
-	
+	"type": "aurora-framework"
 }
