@@ -2,7 +2,7 @@
 	"name": "afterlogic/aurora-module",
 	"autoload": {
 		"psr-4" : {
-			"AuroraPlatform\\": "system/"
+			"Aurora\\": "system/"
 		}
 	},
 	"type": "aurora-core",
