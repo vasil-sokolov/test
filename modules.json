@@ -1,0 +1,8 @@
+{
+  "repositories": [
+		{"type": "composer", "url":"https://afterlogic.com/composer/"}
+  ],
+	"require": {
+		"afterlogic/aurora-dev-tools": "dev-master"
+   }
+}    
