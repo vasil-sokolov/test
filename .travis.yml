@@ -1,6 +1,6 @@
 
 language: php
 install:
-- php composer.phar install
+- composer install
 - npm install ./modules/CoreWebclient
 - ./dev/build.sh
