@@ -1,7 +1,6 @@
 
 language: php
 install:
-- wget https://getcomposer.org/composer.phar
 - php composer.phar install
 - npm install ./modules/CoreWebclient
 - ./dev/build.sh
