@@ -1,5 +1,5 @@
 <?php 
-include_once $sBaseDir . '/system/autoload.php';
+include_once dirname(__File__) . '/system/autoload.php';
 	
 \Aurora\System\Api::Init();
 
