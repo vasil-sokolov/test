@@ -2,8 +2,8 @@
 language: php
 install:
 - composer install
-- npm install ./modules/CoreWebclient
-- chmod u+w ./dev/build.sh
+- chmod +x ./dev/build.sh
 - ./dev/build.sh
+- npm install ./modules/CoreWebclient
 dist: trusty
 sudo: false
