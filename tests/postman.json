@@ -1,0 +1,77 @@
+{
+	"variables": [],
+	"info": {
+		"name": "P8",
+		"_postman_id": "c27a7ffa-f572-2957-6427-008f3ce3e62b",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"//tests[\"Response\"] = responseBody['Result'];",
+							"",
+							"//tests[\"Body matches string\"] = responseBody.has('Result');",
+							"",
+							"var oResponse = JSON.parse(responseBody);",
+							"",
+							"tests[\"Response\"] = oResponse.Result.AuthToken;",
+							"",
+							"postman.setEnvironmentVariable(\"AuthToken\", oResponse.Result.AuthToken);"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": {
+					"raw": "{{ApiUrl}}/?/Api/",
+					"host": [
+						"{{ApiUrl}}"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "/Api/",
+							"value": "",
+							"equals": false,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Module",
+							"value": "Core",
+							"type": "text"
+						},
+						{
+							"key": "Method",
+							"value": "Login",
+							"type": "text"
+						},
+						{
+							"key": "Parameters",
+							"value": "{ Login: \"{{Login}}\", Password: \"{{Password}}\", SignMe: true }",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

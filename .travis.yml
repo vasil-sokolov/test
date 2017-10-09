@@ -1,11 +1,22 @@
-language: php
-install:
-- mysql -e 'CREATE DATABASE aurora;'
-- composer install
-- php ./travis.php
-- chmod +x ./build.sh
-- ./build.sh
 dist: trusty
 sudo: false
+language: php
+php:
+  - '5.4'
 services:
   - mysql
+install:
+  - mysql -e 'CREATE DATABASE aurora;'
+  - composer install
+  - npm install -g newman
+script: 
+  # set up database credentials
+  - php ./travis.php
+  # run tests
+  - newman run ./tests/postman.json -e ./tests/postman_environment.json
+  # build static for frontend
+  - chmod +x ./build.sh
+  - ./build.sh
+deploy:
+  # prevent removing of files in working directory
+  skip_cleanup: true
