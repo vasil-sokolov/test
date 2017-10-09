@@ -2,7 +2,6 @@
 language: php
 install:
 - composer install
-- npm install ./modules/CoreWebclient
 - chmod +x ./build.sh
 - ./build.sh
 dist: trusty
