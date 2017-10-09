@@ -3,7 +3,7 @@ include_once $sBaseDir . '/system/autoload.php';
 	
 \Aurora\System\Api::Init();
 
-$DbHost = 127.0.0.1;
+$DbHost = '127.0.0.1';
 $DbLogin = 'root';
 $DbPassword = '';
 $DbName = 'aurora';
