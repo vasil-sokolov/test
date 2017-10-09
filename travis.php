@@ -1,7 +1,9 @@
 <?php 
 include_once dirname(__File__) . '/system/autoload.php';
 	
-\Aurora\System\Api::Init();
+$bAdminPrivileges = true;
+
+\Aurora\System\Api::Init($bAdminPrivileges);
 
 $DbHost = '127.0.0.1';
 $DbLogin = 'root';
