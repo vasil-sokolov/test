@@ -3,8 +3,9 @@
 		{"type": "composer", "url":"https://afterlogic.com/composer/"}
   ],
 	"require": {
-		"afterlogic/aurora-dev-tools": "0.6.x",
-		"afterlogic/aurora-module-core": "0.6.x",
-		"afterlogic/aurora-module-webclient-core": "0.6.x"
+		"afterlogic/aurora-framework": "dev-master",
+		"afterlogic/aurora-dev-tools": "dev-master",
+		"afterlogic/aurora-module-core": "dev-master",
+		"afterlogic/aurora-module-webclient-core": "dev-master"
    }
 }    

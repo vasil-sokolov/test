@@ -1,7 +1,11 @@
 language: php
 install:
+- mysql -e 'CREATE DATABASE aurora;'
 - composer install
+- php ./travis.php
 - chmod +x ./build.sh
 - ./build.sh
 dist: trusty
 sudo: false
+services:
+  - mysql
