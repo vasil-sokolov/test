@@ -4,3 +4,5 @@ install:
 - composer install
 - npm install ./modules/CoreWebclient
 - ./dev/build.sh
+dist: trusty
+sudo: false
