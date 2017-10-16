@@ -14,8 +14,6 @@ script:
 - newman run ./tests/postman.json -e ./tests/postman_environment.json
 - chmod +x ./build.sh
 - "./build.sh"
-- chmod +x ./pack.sh
-- "./pack.sh 8.1.5"
 deploy:
   skip_cleanup: true
 env:
