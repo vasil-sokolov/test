@@ -14,7 +14,7 @@ script:
 #- newman run ./tests/postman.json -e ./tests/postman_environment.json
 #- chmod +x ./build.sh
 #- "./build.sh"
-- zip -r package.zip data/settings/modules
+- zip -r package.zip modules
 deploy:
   skip_cleanup: true
 env:
