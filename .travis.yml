@@ -14,9 +14,9 @@ script:
 #- newman run ./tests/postman.json -e ./tests/postman_environment.json
 #- chmod +x ./build.sh
 #- "./build.sh"
-- zip -r package.zip modules
-deploy:
-  skip_cleanup: true
+- zip -r package.zip composer.json
+#deploy:
+#  skip_cleanup: true
 env:
   global:
   - secure: JKhCq2psLnho8G0JPNJSpLb2xN4g6oUa7J7KZBzS5LPLhYPiueFDWdMYqUvYRyZYZHFpBhVhvifqy/eG5MxvdYCqt3/8fLx/AdQM7T9oWsSe9l30MjNmCa4ACuwgSSvcHulVJDMUG6CS5mOfWYfSGV4RoECgpUv6exWmFXDYBZRKrwVEcoZA78YeXJFWGB5f5up7+jqyR83oKIiJzZen5ExMx23eFDa10I0J0ptX5ArkikecmCYqzbveDebv3hP1G7yM9qST0eEycFIBEwsN6jnUvLF4TzND4MKvdc6CjQcm8laJUsKO6iWnyEVUIT6ltyFf4tyRfeVQ0dMVFF57hHG5AJkWjpr8lLf4u/eVYWDSS1iL9h/ntPgThUqFQJfCjGG9N8kzv2faufq1N6gOruoIlyaerYxpZ0H/bqJsTZ3WQKcIh5Z7MiVvNJhEJQt+tM38YY9mV0aV+bm9a/RgGWcfb0Wn/4Gz/rE0ojqdoNKjz+CoiiCo7Db1SdotVT4X5LlXai5wiKqA1Iv6jpQEFXKaKLM4yXbPyoDxAqHSGM6+nptouxKbqx6m4IWgCSNsgYnZpG+0a+eElS5QgYKEogqsHyftMVkG0QvQPWmQ7GMaT09bzGYODdKrARPlgyXUCuS/n2K6p6UyUjBsm9EkF1KnPBkJvKlUb043ZsG9Ors=
