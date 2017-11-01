@@ -11,7 +11,7 @@ language: php
 #- npm install -g newman
 script:
 #- php ./travis.php
-#- chmod +x ./build.sh
+- chmod +x ./build.sh
 - "./build.sh $PRODUCT_NAME.zip"
 #- zip -r $PRODUCT_NAME.zip composer.json
 #deploy:
