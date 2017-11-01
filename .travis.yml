@@ -1,18 +1,19 @@
 dist: trusty
 sudo: false
 language: php
-php:
-- '5.5'
-services:
-- mysql
-install:
-- mysql -e 'CREATE DATABASE aurora;'
-- composer install
-- npm install -g newman
+#php:
+#- '5.5'
+#services:
+#- mysql
+#install:
+#- mysql -e 'CREATE DATABASE aurora;'
+#- composer install
+#- npm install -g newman
 script:
-- php ./travis.php
-- chmod +x ./build.sh
-- "./build.sh"
+#- php ./travis.php
+#- chmod +x ./build.sh
+#- "./build.sh"
+- zip -r package.zip composer.json
 #deploy:
 #  skip_cleanup: true
 env:
