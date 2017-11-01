@@ -7,6 +7,6 @@
 # gulp js:min
 # gulp test
 
-if [ "$1" != "" ]; then
-	zip -r $1.zip favicon.ico robots.txt composer.json modules.json
-fi
+#if [ "$1" != "" ]; then
+	zip -r ${PRODUCT_NAME}.zip favicon.ico robots.txt composer.json modules.json
+#fi

@@ -12,7 +12,7 @@ language: php
 script:
 #- php ./travis.php
 - chmod +x ./build.sh
-- "./build.sh $PRODUCT_NAME.zip"
+- "./build.sh"
 #- zip -r $PRODUCT_NAME.zip composer.json
 #deploy:
 #  skip_cleanup: true
